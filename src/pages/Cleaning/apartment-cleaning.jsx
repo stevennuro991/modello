@@ -11,6 +11,12 @@ import { GrUserSettings } from "react-icons/gr";
 import { GiDelicatePerfume } from "react-icons/gi";
 import { FaStudiovinari } from "react-icons/fa6";
 import { FaThumbsUp } from "react-icons/fa";
+import {
+  Accordion,
+  AccordionBody,
+  AccordionHeader,
+  AccordionItem,
+} from "react-headless-accordion";
 
 function ApartmentCleaning() {
   const serviceicons = [
@@ -56,13 +62,94 @@ function ApartmentCleaning() {
         </div>
       </div>
       <div className="flex p-20 space-x-20">
-        <div className="flex ml-20 justify-between py-7 w-[40%] border">
+        <div className="flex ml-20 space-y-10 py-7 w-[40%] border">
           <div>
             <div className="flex gap-2 items-center">
               <hr className="bg-black h-[5px] w-[100px]" />
               <h1 className="text-black uppercase">our services</h1>
             </div>
-            <div className="border w-full "></div>
+            <div className="border w-full ">
+              <Accordion className="w-full space-y-5">
+                <AccordionItem className="">
+                  <AccordionHeader className="w-[500px]">
+                    <h3 className={`accordion-title`}>Home Cleaning</h3>
+                  </AccordionHeader>
+
+                  <AccordionBody className="w-full">
+                    <div className="accordion-body">
+                      Lorem ipsum dolor sit amet.
+                    </div>
+                  </AccordionBody>
+                </AccordionItem>
+                <AccordionItem>
+                <AccordionHeader className="w-[500px]">
+                    <h3 className={`accordion-title`}>
+                      Waste Pick-up and Disposal Service
+                    </h3>
+                  </AccordionHeader>
+
+                  <AccordionBody>
+                    <div className="accordion-body">
+                      Lorem ipsum dolor sit amet.
+                    </div>
+                  </AccordionBody>
+                </AccordionItem>
+                <AccordionItem>
+                <AccordionHeader className="w-[500px]">
+                    <h3 className={`accordion-title`}>
+                      Garden, & Landscaping Service
+                    </h3>
+                  </AccordionHeader>
+
+                  <AccordionBody>
+                    <div className="accordion-body">
+                      Lorem ipsum dolor sit amet.
+                    </div>
+                  </AccordionBody>
+                </AccordionItem>
+                <AccordionItem>
+                <AccordionHeader className="w-[500px]">
+                    <h3 className={`accordion-title`}>
+                      Fumigation & Pest Control Service
+                    </h3>
+                  </AccordionHeader>
+
+                  <AccordionBody>
+                    <div className="accordion-body">
+                      Lorem ipsum dolor sit amet.
+                    </div>
+                  </AccordionBody>
+                </AccordionItem>
+                <AccordionItem>
+                <AccordionHeader className="w-[500px]">
+                    <h3 className={`accordion-title`}>
+                      Building Maintenance Service
+                    </h3>
+                  </AccordionHeader>
+
+                  <AccordionBody>
+                    <div className="accordion-body">
+                      Lorem ipsum dolor sit amet.
+                    </div>
+                  </AccordionBody>
+                </AccordionItem>
+
+                <AccordionItem>
+                <AccordionHeader className="w-[500px]">
+                    <h3 className={`accordion-title`}>Title 2</h3>
+                  </AccordionHeader>
+
+                  <AccordionBody>
+                    <div className="accordion-body">
+                      Lorem ipsum dolor sit amet.
+                    </div>
+                  </AccordionBody>
+                </AccordionItem>
+              </Accordion>
+            </div>
+          </div>
+          <div className="border border-2px w-full">
+
           </div>
         </div>
         <div className="w-[60%] mr-40 space-y-10">
@@ -137,7 +224,10 @@ function ApartmentCleaning() {
           <div className="grid grid-cols-2 w-full place-items-center gap-10">
             {serviceicons.map((item, index) => {
               return (
-                <div key={index} className=" hover:scale-[1.02] duration-150 border w-full">
+                <div
+                  key={index}
+                  className=" hover:scale-[1.02] duration-150 border w-full"
+                >
                   <div className="flex w-full h-fit relative hover:cursor-pointer p-5 justify-center items-center object-contain space-y-5 rounded-md space-x-5">
                     <div className="w-20 h-20 rounded-full bg-[#F19C4F] flex items-center justify-center">
                       <p className="text-white text-3xl">{item?.icon}</p>
@@ -145,7 +235,6 @@ function ApartmentCleaning() {
                     <div className="flex flex-col w">
                       <p className="font-bold">{item?.name}</p>
                       <p className="text-xs">{item?.description}</p>
-
                     </div>
                   </div>
                 </div>
