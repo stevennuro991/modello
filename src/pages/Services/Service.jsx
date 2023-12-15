@@ -4,242 +4,254 @@ import aboutUs from "../../assets/images/about_us1.png";
 import missionLogo from "../../assets/icons/mission.svg";
 import visionLogo from "../../assets/icons/eye.svg";
 import teamholder from "../../assets/icons/teamholder.svg";
-import builderLogo from "../../assets/icons/builder.svg"
+import builderLogo from "../../assets/icons/builder.svg";
+import { FaArrowRight } from "react-icons/fa6";
+import { Link } from "react-router-dom";
+import service1 from "../../assets/images/Building-Maintenance-Technician_resized.jpg";
+import service2 from "../../assets/images/Commercial-Carpet-Cleaning-Mistakes.jpg";
+import service3 from "../../assets/images/Furniture-Cleaning-Banner.jpg";
+import service4 from "../../assets/images/Locate-a-Car-Detailing-Near-You.jpg";
+import service5 from "../../assets/images/Squeegeeing-Window-e1643659548152.webp";
+import service6 from "../../assets/images/Clean-The-Floors.jpg";
+import serviceBg from "../../assets/images/disinfection-worker-spraying-subway-staircase-due-covid19-pandemic.jpg";
 
 function Service() {
-    return (
-        <section>
-        <div className="relative">
-          <img src={banner} alt="Banner description" className="w-full" />
-          <div className="absolute top-20 h-full flex flex-col pl-20 w-[800px] justify-center  left-0 p-8">
-            <div className="flex gap-2 items-center">
-              <hr className="bg-white h-[5px] w-[100px]" />
-              <h1 className="text-white text-ls">About us</h1>
-            </div>
-            <h1 className="text-white text-[48px] leading-tight  font-bold">
-              Caring about your cleaning needs
+  const serviceCards = [
+    {
+      image: service1,
+      name: "Home Cleaning",
+      pricing: "Starting from 20cedis",
+      link: "/cleaning-services",
+    },
+    {
+      image: service2,
+      name: "Apartment cleaning",
+      pricing: "Starting from 700cedis",
+      link: "/apartment-cleaning",
+
+    },
+    {
+      image: service3,
+      name: "Sofa Cleaning",
+      pricing: "Starting from 450cedis",
+      link: "/sofa-cleaning",
+
+    },
+    {
+      image: service4,
+      name: "Mattress Cleaning",
+      pricing: "Starting from 180cedis",
+      link: "/mattress-cleaning",
+
+    },
+    {
+      image: service5,
+      name: "Car Washing and Detailing",
+      pricing: "Starting from 265cedis",
+      link: "/car-cleaning",
+
+    },
+    {
+      image: service6,
+      name: "Home Cleaning",
+      pricing: "Starting from 20cedis",
+    },
+  ];
+
+  const textCards = [
+    {
+      text: "",
+    },
+    {
+      text: "",
+    },
+  ];
+
+  return (
+    <section>
+      <div className="relative">
+        <img src={banner} alt="Banner description" className="w-full" />
+        <div className="absolute top-10 h-full flex flex-col pl-20 w-[800px] justify-center  left-0 p-8 space-y-5">
+          <div className="flex gap-2 items-center">
+            <hr className="bg-white h-[5px] w-[100px]" />
+            <h1 className="text-white text-ls">Our Services</h1>
+          </div>
+          <h1 className="text-white text-[48px] leading-tight  font-bold w-[80%]">
+            Professional cleaning services for your homes and offices
+          </h1>
+          <p className="text-white w-[60%]">
+            We are a professional cleaning company founded in 1997 and providing
+            leading commercial and residential cleaning solutions in the United
+            States.
+          </p>
+          <button className="uppercase w-[30%] bg-[#EEB000] text-white p-2 flex items-center justify-center space-x-3 rounded-md">
+            <p>Request a demo</p>
+            <FaArrowRight />
+          </button>
+        </div>
+      </div>
+
+      <div className="flex flex-col px-12 justify-between py-7 space-y-5">
+        <div className="flex gap-2 items-center w-full justify-center">
+          <hr className="bg-black h-[5px] w-[100px]" />
+          <h1 className="text-black uppercase">our sevices</h1>
+          <hr className="bg-black h-[5px] w-[100px]" />
+        </div>
+        <h1 className="flex justify-center items-center text-3xl font-semibold px-[600px] text-center">
+          We are providing all kind of cleaning services
+        </h1>
+      </div>
+      <div className="grid grid-cols-3 w-full gap-y-10 place-items-center pb-40 p-10 px-60">
+        {serviceCards.map((item, index) => {
+          return (
+            <Link
+              key={index}
+              to={item?.link}
+              className="md:w-80 h-80   hover:scale-[1.02] rounded-lg duration-150"
+            >
+              <div className="flex w-full h-full border relative rounded-lg hover:cursor-pointer flex-col justify-between shadow-md bg-cover object-contain bg-white">
+                <div className="rounded-lg bg-contain h-[75%] w-full object-scale-down bg-black property-img ">
+                  <img
+                    src={item?.image}
+                    alt="..."
+                    className=" h-full object-fill rounded-t-lg"
+                  />
+                </div>
+                <div className="p-3 flex rounded-lg w-full space-y-1 items-center justify-center">
+                  <div className="flex flex-col w-[80%]">
+                    <h3>{item?.name}</h3>
+                    <h6 className="font-extralight">{item?.pricing}</h6>
+                  </div>
+                  <div className="h-10 w-10 border rounded-full flex items-center justify-center">
+                    <FaArrowRight className="text-blue-500" />
+                  </div>
+                </div>
+              </div>
+            </Link>
+          );
+        })}
+      </div>
+
+      <div className="bg-gray-100 py-20 w-full flex items-center justify-center">
+        <div className="px-10">
+          <div className="flex justify-center gap-2 items-center">
+            <hr className="bg-black h-[5px] w-[100px]" />
+            <h1 className="text-black text-ls uppercase">testimonials</h1>
+            <hr className="bg-black h-[5px] w-[100px]" />
+          </div>
+
+          <div className="flex flex-col justify-center items-center space-y-10">
+            <h1 className="pt-6 justify-center item-center w-29 text-[32px] px-[600px] text-center font-semibold">
+              Trusted by thousand of people & companies.{" "}
             </h1>
-            <p className="text-white">
-              Hire us! We are a professional cleaning company offering all type of
-              cleaning and maintenance services.
-            </p>
-          </div>
-        </div>
-  
-        <div className="flex px-12 justify-between py-7">
-          <div>
-            <div className="flex gap-2 items-center">
-              <hr className="bg-black h-[5px] w-[100px]" />
-              <h1 className="text-black">About us</h1>
-            </div>
-            <h1 className="font-bold w-[400px] text-4xl pt-6">
-              Why Will You Choose Our Services?
-            </h1>
-            <p className="w-[600px] pt-2">
-              leer. Muchos paquetes de autoedicióny editores de páginas web usan
-              el Lorem Ipsum como su texto por defecto, y al hacer una búsqueda de
-              "Lorem Ipsum" va a dar por resultado muchos sitios web que usan este
-              texto si se encuentran enestado de desarrollo. Muchas versioneshan
-              evolucionado a través de los añosalgunas veces por accidente, otras
-              veces apropósito (por ejemplo insertándole humor y cosas por el
-              estilo). leer. Muchos paquetes de autoedicióny editores de páginas
-              web usan el Lorem Ipsum como su texto por defecto, y al hacer una
-              búsqueda de "Lorem Ipsum" va a dar por resultado muchos sitios web
-              que usan este texto si se encuentran enestado de desarrollo. Muchas
-              versioneshan evolucionado a través de los añosalgunas veces por
-              accidente, otras veces apropósito (por ejemplo insertándole humor y
-              cosas por el estilo).
-            </p>
-          </div>
-          <img className="h-1/2 w-1/2" src={aboutUs} alt="" />
-        </div>
-        <div className="flex items-center justify-center">
-          <div className="bg-white item-center w-[1100px]  p-8 rounded-lg shadow-md">
-            <div className="flex justify-center item-center">
-              {" "}
-              <img src={missionLogo} alt="" />
-            </div>
-            <h2 className="text-2xl flex justify-center item-center font-bold text-blue-900 mb-4">
-              MISSION STATEMENT
-            </h2>
-            <p className="text-gray-700">
-              At Modello Services, our mission is to redefine sanitation and
-              service standards, elevating the quality of life for individuals,
-              families, and businesses across Ghana and West Africa.
-            </p>
-            <p className="text-gray-700 mt-4">
-              We are committed to delivering excellence in every aspect of our
-              work, from pristine cleaning services to meticulous property
-              maintenance, from creating beautiful, sustainable landscapes to
-              providing pest-free environments. Our mission is to create spaces
-              that radiate cleanliness, safety, and harmony.
-            </p>
-            <p className="text-gray-700 mt-4">
-              With unwavering dedication to quality, sustainability, and customer
-              satisfaction, we aim to be the trusted partner you rely on for a
-              cleaner, well-maintained life. We're driven by a vision of a Ghana
-              and West Africa where every space, from homes to industrial
-              facilities, reflects our commitment to excellence.
-            </p>
-            <p className="text-gray-700 mt-4">
-              Join us in this mission towards a cleaner, safer, and more vibrant
-              future across Ghana and West Africa. Choose Modello Services, and
-              together, let's make cleanliness and well maintained spaces the
-              norm, not the exception.
-            </p>
-          </div>
-        </div>
-  
-        <div className="flex items-center justify-center pt-6">
-          <div className="bg-white item-center w-[1100px]  p-8 rounded-lg shadow-md">
-            <div className="flex justify-center item-center">
-              {" "}
-              <img src={visionLogo} alt="" />
-            </div>
-            <h2 className="text-2xl flex justify-center item-center font-bold text-blue-900 mb-4">
-              MISSION STATEMENT
-            </h2>
-            <p className="text-gray-700">
-              At Modello Services, our mission is to redefine sanitation and
-              service standards, elevating the quality of life for individuals,
-              families, and businesses across Ghana and West Africa.
-            </p>
-            <p className="text-gray-700 mt-4">
-              We are committed to delivering excellence in every aspect of our
-              work, from pristine cleaning services to meticulous property
-              maintenance, from creating beautiful, sustainable landscapes to
-              providing pest-free environments. Our mission is to create spaces
-              that radiate cleanliness, safety, and harmony.
-            </p>
-            <p className="text-gray-700 mt-4">
-              With unwavering dedication to quality, sustainability, and customer
-              satisfaction, we aim to be the trusted partner you rely on for a
-              cleaner, well-maintained life. We're driven by a vision of a Ghana
-              and West Africa where every space, from homes to industrial
-              facilities, reflects our commitment to excellence.
-            </p>
-            <p className="text-gray-700 mt-4">
-              Join us in this mission towards a cleaner, safer, and more vibrant
-              future across Ghana and West Africa. Choose Modello Services, and
-              together, let's make cleanliness and well maintained spaces the
-              norm, not the exception.
-            </p>
-          </div>
-        </div>
-  
-        <div className="bg-gray-100 py-20 w-full flex items-center justify-center">
-          <div className="px-10">
-            <div className="flex justify-center gap-2 items-center">
-              <hr className="bg-black h-[5px] w-[100px]" />
-              <h1 className="text-black text-ls">Our Team</h1>
-              <hr className="bg-black h-[5px] w-[100px]" />
-            </div>
-  
-            <div className="flex flex-col justify-center items-center">
-              <h1 className="pt-6 justify-center item-center w-29 text-[32px]">
-                Meet People behind our company
-              </h1>
-  
-              <div className="pt-20 flex space-x-12">
-                <div className="flex flex-col items-center justify-center">
-                  <img src={teamholder} alt="" />
-                  <h1>Kwame Boakye</h1>
-                  <h1>Kwame Boakye</h1>
-                </div>
-  
-                <div className="flex flex-col items-center justify-center">
-                  <img src={teamholder} alt="" />
-                  <h1>Kwame Boakye</h1>
-                  <h1>Kwame Boakye</h1>
-                </div>
-  
-                <div className="flex flex-col items-center justify-center">
-                  <img src={teamholder} alt="" />
-                  <h1>Kwame Boakye</h1>
-                  <h1>Kwame Boakye</h1>
-                </div>
-  
-                <div className="flex flex-col items-center justify-center">
-                  <img src={teamholder} alt="" />
-                  <h1>Kwame Boakye</h1>
-                  <h1>Kwame Boakye</h1>
-                </div>
-              </div>
-              <div className="pt-20 flex space-x-12">
-                <div className="flex flex-col items-center justify-center">
-                  <img src={teamholder} alt="" />
-                  <h1>Kwame Boakye</h1>
-                  <h1>Kwame Boakye</h1>
-                </div>
-  
-                <div className="flex flex-col items-center justify-center">
-                  <img src={teamholder} alt="" />
-                  <h1>Kwame Boakye</h1>
-                  <h1>Kwame Boakye</h1>
-                </div>
-  
-                <div className="flex flex-col items-center justify-center">
-                  <img src={teamholder} alt="" />
-                  <h1>Kwame Boakye</h1>
-                  <h1>Kwame Boakye</h1>
-                </div>
-  
-                <div className="flex flex-col items-center justify-center">
-                  <img src={teamholder} alt="" />
-                  <h1>Kwame Boakye</h1>
-                  <h1>Kwame Boakye</h1>
-                </div>
-              </div>
-            </div>
-            <div className="flex gap-2 mt-10 items-center">
-              <hr className="bg-black h-[5px] w-[100px]" />
-              <h1 className="text-back text-ls">Feautured Services</h1>
-            </div>
-            {/* <h1 className="text-back text-ls">The Best Service We <br/> Have Provided</h1> */}
-            <h1 className="text-back text-[32] font-bold">
-              The Best Service We{" "}
-            </h1>
-            <h1 className="text-back text-[32] font-bold"> Have Provided</h1>
-  
-            <div className="flex space-x-4 px-11 py-11">
-              <div className="bg-white relative p-10 w-1/2">
-                <div className="flex flex-col">
-                  <div className="absolute top-[-50px] left-[40%]"><img className="" src={builderLogo} alt="" /></div>
-                  <h1>Painting</h1>
-                  <p>
-                    There creepeth darkness him wherein a the signs face unto best
-                    seasons female were they're dominion.Brought gathered whales
-                    was.face unto best seasons female were they're
-                  </p>
-                </div>
-              </div>
-              <div className="bg-white relative p-10 w-1/2">
-                <div className="flex flex-col">
-                <div className="absolute top-[-50px] left-[40%]"><img className="" src={builderLogo} alt="" /></div>
-                  <h1>Painting</h1>
-                  <p>
-                    There creepeth darkness him wherein a the signs face unto best
-                    seasons female were they're dominion.Brought gathered whales
-                    was.face unto best seasons female were they're
-                  </p>
-                </div>
-              </div>
-              <div className="bg-white relative p-10 w-1/2">
-                <div className="flex flex-col">
-                <div className="absolute top-[-50px] left-[40%]"><img className="" src={builderLogo} alt="" /></div>
-                  <h1>Painting</h1>
-                  <p>
-                    There creepeth darkness him wherein a the signs face unto best
-                    seasons female were they're dominion.Brought gathered whales
-                    was.face unto best seasons female were they're
-                  </p>
-                </div>
-              </div>
+            <div className="grid grid-cols-2 w-full place-items-center pb-40 px-80">
+              {textCards.map((item, index) => {
+                return (
+                  <div
+                    key={index}
+                    className="md:w-[450px] h-72 hover:scale-[1.02] duration-150"
+                  >
+                    <div className="flex w-full h-full border relative hover:cursor-pointer flex-col justify-between shadow-md bg-cover object-contain bg-white"></div>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>
-      </section>
-    );
-  }
-  
-  export default Service;
+      </div>
+
+      <div className="bg-contain h-96 w-[100%] relative object-scale-down bg-black property-img ">
+        <img
+          src={serviceBg}
+          alt="..."
+          className="h-full w-full object-cover absolute"
+          // onError={() => setImageError(true)}
+        />
+        <div className="bg-blue-900 w-full h-full text-white absolute opacity-70 z-10"></div>
+        <div className="absolute flex w-full h-full justify-center z-20 gap-2 items-center -mt-28">
+          <hr className="bg-white h-[5px] w-[100px]" />
+          <h1 className="text-white uppercase">cost calculator</h1>
+          <hr className="bg-white h-[5px] w-[100px]" />
+        </div>
+        <div className="absolute flex w-full h-full justify-center items-center z-20 gap-2 -mt-16">
+          <h1 className="pt-6 justify-center item-center w-29 text-[32px] px-[600px] text-center font-semibold text-white">
+            Be a part of hundreds of happy families
+          </h1>
+        </div>
+      </div>
+      <div className="w-full h-full flex items-center justify-center bg-transparent -mt-40 z-50 relative">
+        <div className="bg-white w-[80%] h-fit border rounded p-10">
+          <div className="w-full h-full grid grid-cols-3 gap-40 place-items-center">
+            <div className="w-full flex flex-col space-y-10">
+              <label htmlFor="" className="flex flex-col space-y-1">
+                <p>Choose a servive</p>
+                <input
+                  type="text"
+                  className="border p-2 w-full bg-gray-100 rounded"
+                />
+              </label>
+              <label htmlFor="" className="flex flex-col space-y-1">
+                <p> Your name</p>
+                <input
+                  type="text"
+                  className="border p-2 w-full bg-gray-100 rounded"
+                />
+              </label>
+            </div>
+            <div className="w-full flex flex-col space-y-10">
+              <label htmlFor="" className="flex flex-col space-y-1">
+                <p> Type of cleaning</p>
+                <input
+                  type="text"
+                  className="border p-2 w-full bg-gray-100 rounded"
+                />
+              </label>
+              <label htmlFor="" className="flex flex-col space-y-1">
+                <p> Zip code</p>
+                <input
+                  type="text"
+                  className="border p-2 w-full bg-gray-100 rounded"
+                />
+              </label>
+            </div>
+            <div className="w-full flex flex-col space-y-10">
+              <label htmlFor="" className="flex flex-col space-y-1">
+                <p> Total floor area</p>
+                <input
+                  type="text"
+                  className="border p-2 w-full bg-gray-100 rounded"
+                />
+              </label>
+              <label htmlFor="" className="flex flex-col space-y-1">
+                <p> Email address</p>
+                <input
+                  type="text"
+                  className="border p-2 w-full bg-gray-100 rounded"
+                />
+              </label>
+            </div>
+          </div>
+          <div className="w-full h-full grid grid-cols-3 gap-40 place-items-center py-10">
+            <div className="w-full">
+              <button className="uppercase w-[100%] bg-blue-500 text-white p-2 flex items-center justify-center rounded-md">
+                <p>Submit</p>
+              </button>
+            </div>
+            <div>
+              <p className="font-extralight text-sm">
+                Submit this information and we will send you the cost for the
+                service.
+              </p>
+            </div>
+            <div></div>
+          </div>
+        </div>
+      </div>
+      <div className="w-full h-96 py-10">
+        <div></div>
+      </div>
+    </section>
+  );
+}
+
+export default Service;

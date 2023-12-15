@@ -38,9 +38,9 @@ const Navbar = () => {
             <div className="hidden md:flex space-x-4">
               <a href="/" className="px-3 py-2 rounded-md text-blue-500 text-sm font-medium">Home</a>
               <a href="/about" className="px-3 py-2 rounded-md text-sm text-blue-500 font-medium">About</a>
-              <a href="/services" className="px-3 py-2 rounded-md text-blue-500 text-sm font-medium">Services</a>
-              <a href="/" className="px-3 py-2 rounded-md text-sm text-blue-500 font-medium">Pricing</a>
-              <a href="/" className="px-3 py-2 rounded-md text-sm text-blue-500 font-medium">Contact Us</a>
+              <a href="/service" className="px-3 py-2 rounded-md text-blue-500 text-sm font-medium">Services</a>
+              <a href="/pricing" className="px-3 py-2 rounded-md text-sm text-blue-500 font-medium">Pricing</a>
+              <a href="/contact" className="px-3 py-2 rounded-md text-sm text-blue-500 font-medium">Contact Us</a>
               {/* Other navigation items */}
             </div>
           </div>
