@@ -148,7 +148,7 @@ function ApartmentCleaning() {
               </Accordion>
             </div>
           </div>
-          <div className="border border-2px w-full">
+          <div className="border border-2px w-full h-fit">
 
           </div>
         </div>
